@@ -155,6 +155,12 @@
             border-radius: 5px;
             display: inline-block; /* Center the background */
         }
+
+        .larger-text {
+            font-size: 1.5em; /* 50% larger than the default size */
+            font-family: 'Bungee', sans-serif;
+            color: #00ff00; /* Green color for the text */
+        }
     </style>
 </head>
 <body>
@@ -173,7 +179,7 @@
     <header>
         <h1>Cody Hunter - The Insurance Hub 🏥</h1>
         <p class="click-to-call">📞 <a href="tel:14054598088">1-405-459-8088 – Click to Call</a></p>
-        <p>Helping You Qualify for Top-Tier Insurance Plans with $0 Monthly Premium! 🎉</p>
+        <p class="larger-text">Helping You Qualify for Top-Tier Insurance Plans with $0 Monthly Premium! 🎉</p>
     </header>
 
     <div class="box" id="why-choose">
@@ -216,58 +222,46 @@
         <h2>What Our Clients Say 💬</h2>
         <p>"Cody helped me find an amazing insurance plan that fits my family's needs perfectly!" - Sarah J.</p>
         <p>"I never thought I could qualify for such great coverage at no cost!" - Mark R.</p>
-        <p>"Thanks to Cody, I have peace of mind knowing my family is covered!" - Linda G.</p>
-        <p>"The process was smooth and straightforward. Highly recommend!" - John D.</p>
+        <p>"Thanks to Cody, I can finally afford the healthcare I need!" - Lisa K.</p>
     </section>
 
     <section class="faq" id="faq">
         <h2>Frequently Asked Questions ❓</h2>
-        <p><strong>Q: What type of insurance do you offer?</strong><br>A: We offer health insurance plans for individuals and families, including dental and vision coverage.</p>
-        <p><strong>Q: Can I get coverage for my children?</strong><br>A: Yes! We have plans that cover children as well.</p>
-        <p><strong>Q: Is there a cost to get a quote?</strong><br>A: No! Getting a quote is free and easy.</p>
+        <p><strong>1. What types of insurance do you offer?</strong></p>
+        <p>We offer major medical, dental, and vision insurance plans.</p>
+        <p><strong>2. How do I get a free quote?</strong></p>
+        <p>Simply call or email me, and I'll guide you through the process!</p>
     </section>
 
     <section class="rewards" id="rewards">
         <h2>Rewards Programs 🎁</h2>
-        <div style="display: flex; justify-content: center; text-align: center;">
-            <div style="flex: 1; max-width: 300px;">
-        
-                <ul class="rewards-list">
-                    <li><a href="https://www.uhc.com/member-resources/health-care-programs/wellness-and-rewards-programs">United Healthcare</a></li>
-                    <li><a href="https://www.ambetterhealth.com/en/health-plans/my-health-pays/">Ambetter</a></li>
-                    <li><a href="https://www.floridablue.com/individualsandfamilies/better-you-strides-rewards-program">Florida Blue</a></li>
-                    <li><a href="https://www.aetnarewards.com/ng#/login">Aetna</a></li>
-                    <li><a href="https://www.cigna.com/rewards">Cigna</a></li>
-                    <li><a href="https://www.hioscar.com/faq/silver-simple-for-diabetes-how-will-I-receive-my-rewards">Oscar Healthcare</a></li>
-                    <li><a href="https://www.molinahealthcare.com/members/il/en-us/mem/medicaid/overvw/Member-Rewards.aspx">Molina</a></li>
-                </ul>
-            </div>
-            <div style="flex: 1; max-width: 300px; text-align: center;">
-                <h2 style="font-size: 2.5em; color: #00ff00; font-family: 'Bungee', sans-serif;">UP TO $500!</h2>
-            </div>
-        </div>
+        <ul class="rewards-list">
+            <li><a href="#reward1">Referral Rewards</a></li>
+            <li><a href="#reward2">Loyalty Discounts</a></li>
+            <li><a href="#reward3">Wellness Incentives</a></li>
+        </ul>
+        <p>Contact me to learn more about how you can earn rewards through your insurance plans!</p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Cody Hunter. All rights reserved.</p>
+        <p>&copy; 2024 Cody Hunter - The Insurance Hub | <a href="#top">Back to Top</a></p>
     </footer>
 
     <script>
-        document.getElementById('chatbotForm').addEventListener('submit', function(event) {
+        document.getElementById('chatbotForm').onsubmit = function(event) {
             event.preventDefault();
-            const zipcode = document.getElementById('zipcode').value;
-            const dob = document.getElementById('dob').value;
-            const household = document.getElementById('household').value;
-            const income = document.getElementById('income').value;
+            var zipcode = document.getElementById('zipcode').value;
+            var dob = document.getElementById('dob').value;
+            var household = document.getElementById('household').value;
+            var income = document.getElementById('income').value;
 
-            // Basic eligibility check logic
-            if (income < 20000) {
-                document.getElementById('result').textContent = "You may qualify for a $0 premium plan!";
+            // Simple validation (for demonstration purposes)
+            if (zipcode && dob && household && income) {
+                document.getElementById('result').innerText = 'You have successfully prequalified! 🎉';
             } else {
-                document.getElementById('result').textContent = "You might not qualify for a $0 premium plan.";
+                document.getElementById('result').innerText = 'Please fill in all fields.';
             }
-        });
+        };
     </script>
-
 </body>
 </html>
