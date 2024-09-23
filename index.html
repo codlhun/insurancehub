@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cody Hunter - The Insurance Guy, helping people qualify for top-tier insurance plans with $0 monthly premiums. Call now for a free quote!">
+    <meta name="description" content="Cody Hunter - The Insurance Hub, helping people qualify for top-tier insurance plans with $0 monthly premiums. Call now for a free quote!">
+    <meta name="keywords" content="insurance, health insurance, Cody Hunter, free quotes, top-tier plans">
+    <meta name="author" content="Cody Hunter">
+    <link rel="canonical" href="https://codlhun.github.io/insurancehub/">
     <title>Cody's Insurance Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -141,6 +145,16 @@
             display: block;
             margin: 5px 0;
         }
+
+        .click-to-call {
+            font-size: 1.25em; /* Adjusted to half the new size */
+            color: #ffff00;
+            margin-top: 10px;
+            background-color: rgba(0, 0, 0, 0.7); /* Added black background */
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block; /* Center the background */
+        }
     </style>
 </head>
 <body>
@@ -157,7 +171,8 @@
     </nav>
 
     <header>
-        <h1>Cody Hunter - The Insurance Guy 🏥</h1>
+        <img src="banner.jpg" alt="Cody Hunter - The Insurance Hub" style="width: 100%; max-width: 800px; border-radius: 10px;">
+        <p class="click-to-call">📞 <a href="tel:14054598088">1-405-459-8088 – Click to Call</a></p>
         <p>Helping You Qualify for Top-Tier Insurance Plans with $0 Monthly Premium! 🎉</p>
     </header>
 
@@ -172,7 +187,7 @@
 
     <div class="box contact-info" id="contact-info">
         <h2>Get a Free Quote! 📞</h2>
-        <p>Call Cody Hunter, <span class="highlight">The Insurance Guy</span>, for a personalized plan tailored to your health and family needs.</p>
+        <p>Call Cody Hunter, <span class="highlight">The Insurance Hub</span>, for a personalized plan tailored to your health and family needs.</p>
         <a href="tel:14054598088">📞 1-405-459-8088 – Click to Call</a><br>
         <a href="mailto:Cody.Hunter@americanhealthmarketplace.com">📧 Cody.Hunter@americanhealthmarketplace.com</a>
     </div>
@@ -207,28 +222,52 @@
 
     <section class="faq" id="faq">
         <h2>Frequently Asked Questions ❓</h2>
-        <p><strong>Q: How do I qualify for a $0 premium plan?</strong><br>A: You may qualify based on your income and household size. Contact us for more details.</p>
-        <p><strong>Q: What types of plans do you offer?</strong><br>A: We offer major medical, dental, and vision plans for individuals and families.</p>
-        <p><strong>Q: Can I get help if I...</strong></p>
+        <p><strong>Q: What type of insurance do you offer?</strong><br>A: We offer health insurance plans for individuals and families, including dental and vision coverage.</p>
+        <p><strong>Q: Can I get coverage for my children?</strong><br>A: Yes! We have plans that cover children as well.</p>
+        <p><strong>Q: Is there a cost to get a quote?</strong><br>A: No! Getting a quote is free and easy.</p>
     </section>
 
     <section class="rewards" id="rewards">
         <h2>Rewards Programs 🎁</h2>
-        <p>Check out these rewards programs from our carriers:</p>
-        <div class="rewards-list">
-            <a href="https://www.ambetterhealth.com/en/health-plans/my-health-pays/">Ambetter</a>
-            <a href="https://www.floridablue.com/individualsandfamilies/better-you-strides-rewards-program">Florida Blue</a>
-            <a href="https://www.aetnarewards.com/ng#/login">Aetna</a>
-            <a href="https://www.cigna.com/rewards">Cigna</a>
-            <a href="https://www.hioscar.com/faq/silver-simple-for-diabetes-how-will-I-receive-my-rewards">Oscar Healthcare</a>
-            <a href="https://www.molinahealthcare.com/members/il/en-us/mem/medicaid/overvw/Member-Rewards.aspx">Molina</a>
-            <a href="https://www.uhc.com/member-resources/health-care-programs/wellness-and-rewards-programs">United Healthcare</a>
+        <div style="display: flex; justify-content: center; text-align: center;">
+            <div style="flex: 1; max-width: 300px;">
+                <h3>Participating Plans:</h3>
+                <ul class="rewards-list">
+                    <li><a href="https://www.uhc.com/member-resources/health-care-programs/wellness-and-rewards-programs">United Healthcare</a></li>
+                    <li><a href="https://www.ambetterhealth.com/en/health-plans/my-health-pays/">Ambetter</a></li>
+                    <li><a href="https://www.floridablue.com/individualsandfamilies/better-you-strides-rewards-program">Florida Blue</a></li>
+                    <li><a href="https://www.aetnarewards.com/ng#/login">Aetna</a></li>
+                    <li><a href="https://www.cigna.com/rewards">Cigna</a></li>
+                    <li><a href="https://www.hioscar.com/faq/silver-simple-for-diabetes-how-will-I-receive-my-rewards">Oscar Healthcare</a></li>
+                    <li><a href="https://www.molinahealthcare.com/members/il/en-us/mem/medicaid/overvw/Member-Rewards.aspx">Molina</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; max-width: 300px; text-align: center;">
+                <h2 style="font-size: 2.5em; color: #00ff00; font-family: 'Bungee', sans-serif;">UP TO $500!</h2>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2024 Cody Hunter - The Insurance Guy | <a href="https://www.example.com/privacy">Privacy Policy</a></p>
+        <p>&copy; 2024 Cody Hunter. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('chatbotForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const zipcode = document.getElementById('zipcode').value;
+            const dob = document.getElementById('dob').value;
+            const household = document.getElementById('household').value;
+            const income = document.getElementById('income').value;
+
+            // Basic eligibility check logic
+            if (income < 20000) {
+                document.getElementById('result').textContent = "You may qualify for a $0 premium plan!";
+            } else {
+                document.getElementById('result').textContent = "You might not qualify for a $0 premium plan.";
+            }
+        });
+    </script>
 
 </body>
 </html>
