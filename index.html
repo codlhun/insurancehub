@@ -53,7 +53,14 @@
             width: 80%;
         }
 
-        h1, h2 {
+        h1 {
+            font-family: 'Bungee', sans-serif;
+            font-size: 3.5em;
+            color: red;
+            text-shadow: 3px 3px 5px black;
+        }
+
+        h2 {
             color: #ffff00;
         }
 
@@ -77,7 +84,7 @@
             margin: 20px auto;
             border-radius: 10px;
             width: 80%;
-            background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(51, 51, 51, 0.7)), 
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(51, 51, 51, 0.7)),
                         url('black.jpg') repeat;
             background-size: cover;
         }
@@ -88,7 +95,7 @@
             width: 90%;
             max-width: 400px;
             border-radius: 10px;
-            background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(51, 51, 51, 0.7)), 
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(51, 51, 51, 0.7)),
                         url('black.jpg') repeat;
             background-size: cover;
         }
@@ -123,7 +130,7 @@
             border-radius: 10px;
             margin: 20px auto;
             width: 80%;
-            background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(51, 51, 51, 0.7)), 
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(51, 51, 51, 0.7)),
                         url('black.jpg') repeat;
             background-size: cover;
         }
@@ -136,9 +143,17 @@
             margin-top: 20px;
         }
 
-        .rewards-list {
+        .rewards-columns {
+            display: flex;
+            justify-content: center;
             text-align: left;
+        }
+
+        .rewards-list {
+            list-style-type: none;
             padding: 0;
+            width: 45%;
+            text-align: center; /* Center the carrier column */
         }
 
         .rewards-list a {
@@ -146,20 +161,21 @@
             margin: 5px 0;
         }
 
-        .click-to-call {
-            font-size: 1.25em; /* Adjusted to half the new size */
-            color: #ffff00;
-            margin-top: 10px;
-            background-color: rgba(0, 0, 0, 0.7); /* Added black background */
-            padding: 10px;
-            border-radius: 5px;
-            display: inline-block; /* Center the background */
+        .highlight-green {
+            font-family: 'Bungee', sans-serif;
+            font-size: 2.5em;
+            color: #00ff00;
+            text-align: center;
         }
 
-        .larger-text {
-            font-size: 1.5em; /* 50% larger than the default size */
-            font-family: 'Bungee', sans-serif;
-            color: #00ff00; /* Green color for the text */
+        .click-to-call {
+            font-size: 1.25em;
+            color: #ffff00;
+            margin-top: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -179,12 +195,12 @@
     <header>
         <h1>Cody Hunter - The Insurance Hub 🏥</h1>
         <p class="click-to-call">📞 <a href="tel:14054598088">1-405-459-8088 – Click to Call</a></p>
-        <p class="larger-text">Helping You Qualify for Top-Tier Insurance Plans with $0 Monthly Premium! 🎉</p>
+        <p>Helping You Qualify for Top-Tier Insurance Plans with $0 Monthly Premium! 🎉</p>
     </header>
 
     <div class="box" id="why-choose">
         <h2>Why Choose Cody Hunter? 🤔</h2>
-        <p>Access to top-tier plans from major carriers: United Healthcare, BlueCross BlueShield, Aetna, Cigna, Ambetter, and more. 📋</p>
+        <p>He makes it easy to understand insurance better and and you don't have to take to someone new everytime you have a question or need to make any changes!📋</p>
         <p class="highlight">$0 Monthly Premium 💰</p>
         <p>Little to no copays on doctor visits and generic drugs. 💊</p>
         <p>FREE Annual Checkups + 74 Preventative Services. 🩺</p>
@@ -218,50 +234,56 @@
         <p id="result" style="margin-top: 20px;"></p>
     </section>
 
-    <section class="testimonials" id="testimonials">
-        <h2>What Our Clients Say 💬</h2>
-        <p>"Cody helped me find an amazing insurance plan that fits my family's needs perfectly!" - Sarah J.</p>
-        <p>"I never thought I could qualify for such great coverage at no cost!" - Mark R.</p>
-        <p>"Thanks to Cody, I can finally afford the healthcare I need!" - Lisa K.</p>
-    </section>
+   <section class="testimonials" id="testimonials">
+    <h2>What Our Clients Say 💬</h2>
+    <p>"Cody helped me find an amazing insurance plan that fits my family's needs. Highly recommend!" - Jamie D.</p>
+    <p>"Thanks to Cody, I saved money and got better coverage!" - Mike R.</p>
+    <p>"I was overwhelmed by the options, but Cody made it easy to understand. Great service!" - Sarah K.</p>
+    <p>"Cody's expertise made the process smooth and stress-free. I couldn't be happier!" - David L.</p>
+</section>
+
 
     <section class="faq" id="faq">
-        <h2>Frequently Asked Questions ❓</h2>
-        <p><strong>1. What types of insurance do you offer?</strong></p>
-        <p>We offer major medical, dental, and vision insurance plans.</p>
-        <p><strong>2. How do I get a free quote?</strong></p>
-        <p>Simply call or email me, and I'll guide you through the process!</p>
-    </section>
+    <h2>Frequently Asked Questions ❓</h2>
+    <p><strong>Q:</strong> How can I get a free quote?<br>
+       <strong>A:</strong> Call Cody Hunter at 1-405-459-8088 for a personalized plan!</p>
+    <p><strong>Q:</strong> What types of insurance plans do you offer?<br>
+       <strong>A:</strong> We offer major medical, dental, and vision plans tailored to individual and family needs.</p>
+    <p><strong>Q:</strong> How long does it take to enroll in a plan?<br>
+       <strong>A:</strong> The enrollment process is quick and can typically be completed in just a few minutes over the phone!</p>
+</section>
 
-    <section class="rewards" id="rewards">
-        <h2>Rewards Programs 🎁</h2>
+
+   <section class="rewards" id="rewards">
+    <h2>Qualify for additional benefits through our exclusive rewards program:</h2>
+    <div class="rewards-columns">
+        <p class="highlight-green" style="font-family: 'Bungee', sans-serif; font-size: 2.5em;">Get up to $500!</p>
         <ul class="rewards-list">
-            <li><a href="#reward1">Referral Rewards</a></li>
-            <li><a href="#reward2">Loyalty Discounts</a></li>
-            <li><a href="#reward3">Wellness Incentives</a></li>
+            <li><a href="https://www.uhc.com/member-resources/health-care-programs/wellness-and-rewards-programs">United Healthcare</a></li>
+            <li><a href="https://www.ambetterhealth.com/en/health-plans/my-health-pays/">Ambetter</a></li>
+            <li><a href="https://www.floridablue.com/individualsandfamilies/better-you-strides-rewards-program">Florida Blue</a></li>
+            <li><a href="https://www.aetnarewards.com/ng#/login">Aetna</a></li>
+            <li><a href="https://www.cigna.com/rewards">Cigna</a></li>
+            <li><a href="https://www.hioscar.com/faq/silver-simple-for-diabetes-how-will-I-receive-my-rewards">Oscar Healthcare</a></li>
+            <li><a href="https://www.molinahealthcare.com/members/il/en-us/mem/medicaid/overvw/Member-Rewards.aspx">Molina</a></li>
         </ul>
-        <p>Contact me to learn more about how you can earn rewards through your insurance plans!</p>
-    </section>
+    </div>
+</section>
 
     <footer>
-        <p>&copy; 2024 Cody Hunter - The Insurance Hub | <a href="#top">Back to Top</a></p>
+        <p>&copy; 2024 Cody Hunter. All Rights Reserved.</p>
     </footer>
 
     <script>
-        document.getElementById('chatbotForm').onsubmit = function(event) {
+        document.getElementById("chatbotForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            var zipcode = document.getElementById('zipcode').value;
-            var dob = document.getElementById('dob').value;
-            var household = document.getElementById('household').value;
-            var income = document.getElementById('income').value;
+            var zipcode = document.getElementById("zipcode").value;
+            var dob = document.getElementById("dob").value;
+            var household = document.getElementById("household").value;
+            var income = document.getElementById("income").value;
 
-            // Simple validation (for demonstration purposes)
-            if (zipcode && dob && household && income) {
-                document.getElementById('result').innerText = 'You have successfully prequalified! 🎉';
-            } else {
-                document.getElementById('result').innerText = 'Please fill in all fields.';
-            }
-        };
+            document.getElementById("result").innerText = "Thank you for submitting your information! We will get back to you shortly.";
+        });
     </script>
 </body>
 </html>
