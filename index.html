@@ -267,13 +267,43 @@ button:hover {
         <p id="result" style="margin-top: 20px;"></p>
     </section>
 
-   <section class="testimonials" id="testimonials">
+  <section class="testimonials" id="testimonials">
     <h2>What Our Clients Say 💬</h2>
-    <p>"Cody helped me find an amazing insurance plan that fits my family's needs. Highly recommend!" - Jamie D.</p>
-    <p>"Thanks to Cody, I saved money and got better coverage!" - Mike R.</p>
-    <p>"I was overwhelmed by the options, but Cody made it easy to understand. Great service!" - Sarah K.</p>
-    <p>"Cody's expertise made the process smooth and stress-free. I couldn't be happier!" - David L.</p>
+    <div id="testimonial-text"></div>
 </section>
+
+<script>
+    const testimonials = [
+        '"Cody helped me find an amazing insurance plan that fits my family\'s needs. Highly recommend!" - Jamie D.',
+        '"Thanks to Cody, I saved money and got better coverage!" - Mike R.',
+        '"I was overwhelmed by the options, but Cody made it easy to understand. Great service!" - Sarah K.',
+        '"Cody\'s expertise made the process smooth and stress-free. I couldn\'t be happier!" - David L.'
+    ];
+
+    let testimonialIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 50; // Speed of typing
+    const pauseBetweenTestimonials = 2000; // Pause between showing each testimonial
+
+    function typeTestimonial() {
+        const testimonial = testimonials[testimonialIndex];
+        if (charIndex < testimonial.length) {
+            document.getElementById("testimonial-text").textContent += testimonial.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeTestimonial, typingSpeed);
+        } else {
+            setTimeout(() => {
+                document.getElementById("testimonial-text").textContent = ''; // Clear the testimonial
+                charIndex = 0;
+                testimonialIndex = (testimonialIndex + 1) % testimonials.length; // Move to next testimonial
+                typeTestimonial();
+            }, pauseBetweenTestimonials);
+        }
+    }
+
+    window.onload = typeTestimonial; // Start typing on page load
+</script>
+
 
 
     <section class="faq" id="faq">
