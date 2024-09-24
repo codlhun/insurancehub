@@ -27,7 +27,16 @@
             from { opacity: 0; transform: translateY(-50px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        html {
+ @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+      html {
     scroll-behavior: smooth;
 }
 button:hover {
@@ -345,7 +354,18 @@ button:hover {
     <footer>
         <p>&copy; 2024 Cody Hunter. All Rights Reserved.</p>
     </footer>
-
+ <script>
+        // JavaScript to add animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const boxes = document.querySelectorAll('.box, .chatbot, .testimonials, .faq, .rewards');
+            boxes.forEach((box, index) => {
+                // Determine direction for fade-in effect
+                const direction = index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight';
+                box.style.animation = `${direction} 0.8s forwards`;
+                box.style.opacity = '1'; // Set opacity to 1 for visibility
+            });
+        });
+    </script>
     <script>
         document.getElementById("chatbotForm").addEventListener("submit", function(event) {
             event.preventDefault();
