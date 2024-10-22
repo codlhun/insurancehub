@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now for Health Insurance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-color: #000000;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            background-color: #2c3e50;
+        }
+        h1 {
+            color: #00ff00;
+            margin: 0;
+        }
+        .countdown {
+            font-size: 24px;
+            color: #e74c3c;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .left-column, .right-column {
+            flex: 1;
+            margin: 10px;
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .benefits {
+            margin-top: 20px;
+        }
+        .share-buttons {
+            margin-top: 20px;
+        }
+        .cta-button {
+            background-color: #00ff00;
+            color: #000;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 5px 0;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .testimonials {
+            margin-top: 20px;
+            background-color: #2ecc71;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .testimonials p {
+            margin: 0;
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Secure Your Health Insurance Today!</h1>
+    <div class="countdown" id="countdown"></div>
+</header>
+
+<div class="container">
+    <div class="left-column">
+        <h2>Don’t Miss Out on Affordable Coverage!</h2>
+        <div class="benefits">
+            <h3>Benefits of Enrolling Now:</h3>
+            <ul>
+                <li>Access to the best coverage options available.</li>
+                <li>Lower premiums with potential subsidies.</li>
+                <li>Peace of mind knowing you're covered for unexpected health issues.</li>
+            </ul>
+        </div>
+        <div class="testimonials">
+            <h3>What Our Clients Say:</h3>
+            <p>"Cody helped me find the perfect plan for my needs!" - John D.</p>
+            <p>"I enrolled early and saved so much on my premiums!" - Sarah P.</p>
+        </div>
+    </div>
+
+    <div class="right-column">
+        <h2>Share This Opportunity!</h2>
+        <p>Help your friends and family secure affordable health insurance.</p>
+        <div class="share-buttons">
+            <a href="mailto:?subject=Check out this Health Insurance Opportunity&body=I found this amazing health insurance option! Visit: yourwebsite.com" class="cta-button">Share via Email</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=yourwebsite.com" class="cta-button" target="_blank">Share on Facebook</a>
+            <a href="https://twitter.com/share?text=Check out this Health Insurance Opportunity&url=yourwebsite.com" class="cta-button" target="_blank">Share on Twitter</a>
+        </div>
+        <h3>Contact Us!</h3>
+        <p>Need assistance? Call Cody Hunter: <strong>1-405-459-8088</strong></p>
+        <p>Visit our website: <a href="https://codlhun.github.io/insurancehub/" style="color: #00ff00;">https://codlhun.github.io/insurancehub/</a></p>
+    </div>
+</div>
+
+<footer>
+    <p></p>
+</footer>
+
+<script>
+    // Countdown timer logic
+    const countdownElement = document.getElementById('countdown');
+    const enrollmentDeadline = new Date("2024-12-15T00:00:00").getTime();
+
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = enrollmentDeadline - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        
+        if (distance < 0) {
+            clearInterval(timer);
+            countdownElement.innerHTML = "Enrollment period has ended!";
+        }
+    };
+
+    const timer = setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
