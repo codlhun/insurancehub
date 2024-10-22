@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check if you qualify for ACA health insurance by providing your household size, income, and ZIP code.">
+    <title>Check ACA Eligibility</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            padding: 0;
+        }
+
+        header {
+            background-color: #333; /* Dark gray header */
+            padding: 20px;
+            text-align: center;
+            color: #0f0; /* Green text for header */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #0f0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222; /* Slightly lighter gray background */
+        }
+
+        .eligibility-box {
+            background-color: #444; /* Darker gray box */
+            border-radius: 10px;
+            padding: 40px;
+            width: 400px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Green glow */
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .eligibility-box:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 0, 1); /* Stronger green glow on hover */
+        }
+
+        label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #0f0; /* Green button */
+            border: none;
+            color: #000; /* Black text on button */
+            padding: 15px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0a0; /* Darker green on hover */
+        }
+
+        .eligibility-result {
+            margin-top: 20px;
+            font-size: 1.4em;
+            display: none;
+            color: #0f0; /* Green text for result */
+        }
+
+        footer {
+            background-color: #333;
+            text-align: center;
+            padding: 10px;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Check Your ACA Eligibility</h1>
+</header>
+
+<div class="container">
+    <div class="eligibility-box">
+        <h2>Quick Eligibility Check</h2>
+        <p>Fill out the form below to see if you qualify for ACA health insurance.</p>
+
+        <form id="eligibilityForm">
+            <label for="householdSize">Household Size:</label>
+            <input type="number" id="householdSize" name="householdSize" placeholder="Enter household size" required min="1">
+
+            <label for="income">Annual Income (USD):</label>
+            <input type="number" id="income" name="income" placeholder="Enter annual income" required>
+
+            <label for="zipCode">ZIP Code:</label>
+            <input type="text" id="zipCode" name="zipCode" placeholder="Enter ZIP code" required>
+
+            <button type="submit">Check Eligibility</button>
+        </form>
+
+        <div id="result" class="eligibility-result">
+            <!-- Result will appear here -->
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 
+</footer>
+
+<script>
+    const form = document.getElementById('eligibilityForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const householdSize = document.getElementById('householdSize').value;
+        const income = document.getElementById('income').value;
+        const zipCode = document.getElementById('zipCode').value;
+
+        // Simple eligibility check logic
+        if (householdSize && income && zipCode) {
+            let eligible = false;
+
+            // Example eligibility criteria
+            if (income < 50000) {
+                eligible = true;
+            }
+
+            if (eligible) {
+                resultDiv.textContent = "You are likely eligible for ACA subsidies!";
+            } else {
+                resultDiv.textContent = "You may not be eligible for ACA subsidies. Contact us for more information.";
+            }
+            
+            resultDiv.style.display = 'block'; // Show result
+        } else {
+            resultDiv.textContent = "Please fill out all fields.";
+            resultDiv.style.display = 'block'; // Show result
+        }
+    });
+</script>
+
+</body>
+</html>
